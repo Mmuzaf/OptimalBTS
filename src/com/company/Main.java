@@ -17,9 +17,9 @@ public class Main {
         int s = j - i;
 
         while (s < 7) {
-            while (i <= 7) {
+            while (i < 7) {
                 int minA = 0;
-                for (int r  = i; r <= i + s; r++) {
+                for (int r  = i; r < i + s; r++) {
                     int resultByR = getSumWeigth(i, i + s) + A[i][r - 1] + A[r + 1][i + s];
                     if (minA == 0)
                         minA = resultByR;
@@ -32,6 +32,12 @@ public class Main {
             j++;
             s = j - i;
         }
+
+        for (int x = 0; x < 7; x++) {
+            for (int y = 0; y < 7; y++)
+                System.out.println("A[" + x + "][" + y + "] = " + A[x][y]);
+        }
+
     }
 
     static int getSumWeigth(int fromIndex, int toIndex) {
