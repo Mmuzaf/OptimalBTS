@@ -12,15 +12,15 @@ public class Main {
                 A[x][y] = 0;
         }
 
-        int i = 1;
-        int j = 1;
+        int i = 0;
+        int j = 0;
         int s = j - i;
 
         while (s < 7) {
             while (i < 7) {
                 int minA = 0;
-                for (int r  = i; r < i + s; r++) {
-                    int resultByR = getSumWeigth(i, i + s) + A[i][r - 1] + A[r + 1][i + s];
+                for (int r  = i; r <= i + s; r++) {
+                    int resultByR = getSumWeigth(i, i + s) + A[i][r < 1 ? 0 : r - 1] + A[r + 1][i + s];
                     if (minA == 0)
                         minA = resultByR;
                     if (minA > resultByR)
